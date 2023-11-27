@@ -17,7 +17,7 @@ export default function Home() {
           alt="Miss Dani Mo Logo"
         />
       </nav>
-      <section className="px-8 flex flex-col gap-4">
+      <section className="max-w-5xl px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {[1, 2, 3, 4].map((key) => (
           <article
             key={key}
@@ -25,7 +25,7 @@ export default function Home() {
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3JhZnR8ZW58MHx8MHx8fDA%3D)",
             }}
-            className="bg-center bg-cover w-full h-32 bg-slate-300 rounded-2xl p-4"
+            className="max-w-96 bg-center bg-cover w-full h-32 bg-slate-300 rounded-2xl p-4"
           >
             <span className="text-white font-bold text-lg">
               Toilet Paper Binoculars
