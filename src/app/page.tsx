@@ -45,7 +45,7 @@ export default function Home() {
                     Toilet Paper Binoculars
                   </span>
 
-                  <div className="font-medium text-white text-sm flex items-center gap-2">
+                  <div className="font-medium text-white text-sm flex items-center gap-1 whitespace-nowrap">
                     <span className="flex items-center gap-1">
                       <Image
                         src="/paint_brush_white.svg"
