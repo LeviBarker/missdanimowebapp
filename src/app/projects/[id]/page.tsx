@@ -65,12 +65,19 @@ export default async function Project({ params }: { params: { id: string } }) {
             allowFullScreen
           ></iframe>
 
-          <div className="p-4 rounded-2xl bg-yellow-100/90 text-yellow-800">
+          <div className="relative p-4 rounded-2xl bg-yellow-100/90 text-yellow-800">
+            <Image
+              className="absolute right-4 top-4"
+              src="/content_copy.svg"
+              width={24}
+              height={24}
+              alt="Copy icon"
+            />
             <h3 className="font-bold">Supplies</h3>
             <ul>
               {project.supplies?.map((supply) => (
                 <li key={supply.name}>
-                  {supply.quantity} - {supply.name}
+                  {supply.quantity} {supply.name}
                 </li>
               ))}
             </ul>
