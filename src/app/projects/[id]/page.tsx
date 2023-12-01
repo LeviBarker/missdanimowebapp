@@ -25,7 +25,7 @@ export default async function Project({ params }: { params: { id: string } }) {
 
   return (
     <main className="h-screen overflow-auto bg-slate-200">
-      <nav className="bg-slate-200/90 absolute z-50 flex justify-start items-center gap-2 p-8 w-screen">
+      <nav className="bg-slate-200/90 flex justify-start items-center gap-2 p-8 w-screen">
         <Link
           href="/"
           className="cursor-pointer rounded-full w-12 h-12 hover:bg-slate-300 flex items-center justify-center"
@@ -44,9 +44,18 @@ export default async function Project({ params }: { params: { id: string } }) {
           alt="Miss Dani Mo Logo"
         />
       </nav>
-      <section className="mt-32 flex justify-center items-center">
+      <section className="flex justify-center items-center">
         <article className="max-w-lg w-full flex flex-col gap-4 p-4">
           <h1 className="text-3xl font-bold text-red-600">{project.title}</h1>
+          <div className="py-2 w-full text-slate-500 text-sm">
+            This project has a{" "}
+            <b className="lowercase">{project.messiness_level}</b> messiness
+            level with a{" "}
+            <b className="lowercase">{project.grownup_involvement}</b> level of
+            grownup involvement and should take around{" "}
+            <b className="lowercase">{project.time_minutes} minutes</b> to
+            complete.
+          </div>
           <iframe
             height="315"
             src={project.video_url}
@@ -55,9 +64,7 @@ export default async function Project({ params }: { params: { id: string } }) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <div className="bg-slate-700 p-2 rounded-2xl w-full">
-            <ProjectMetadata {...project} />
-          </div>
+
           <div className="p-4 rounded-2xl bg-yellow-100/90 text-yellow-800">
             <h3 className="font-bold">Supplies</h3>
             <ul>
@@ -68,8 +75,15 @@ export default async function Project({ params }: { params: { id: string } }) {
               ))}
             </ul>
           </div>
-          <span className="text-teal-800 font-bold text-2xl">Step 1</span>
-          <span className="text-teal-800 font-bold text-2xl">Step 2</span>
+          {project.steps?.map((step, index) => (
+            <div key={index}>
+              <span className="text-teal-800 font-bold text-2xl">
+                Step {index + 1}
+              </span>
+              <p>{step.text}</p>
+              <span>IMAGE URL: {step.illustration_url}</span>
+            </div>
+          ))}
         </article>
       </section>
     </main>

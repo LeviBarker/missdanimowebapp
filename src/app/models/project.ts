@@ -3,6 +3,11 @@ interface Supply {
   quantity: number;
 }
 
+interface Step {
+  text: string;
+  illustration_url: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -13,4 +18,5 @@ export interface Project {
   video_url: string;
   supplies: Supply[];
   created_at: string;
+  steps: Step[];
 }
