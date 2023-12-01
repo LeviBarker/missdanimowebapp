@@ -61,7 +61,7 @@ export default async function Project({ params }: { params: { id: string } }) {
           <div className="p-4 rounded-2xl bg-yellow-100/90 text-yellow-800">
             <h3 className="font-bold">Supplies</h3>
             <ul>
-              {project.supplies.map((supply) => (
+              {project.supplies?.map((supply) => (
                 <li key={supply.name}>
                   {supply.quantity} - {supply.name}
                 </li>
