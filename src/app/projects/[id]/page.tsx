@@ -1,5 +1,6 @@
 import { app } from "@/app/firebase";
 import Layout from "@/app/layout";
+import Image from "next/image";
 import {
   collection,
   getDocs,
@@ -24,8 +25,26 @@ export default async function Project({ params }: { params: { id: string } }) {
 
   return (
     <main className="h-screen overflow-auto bg-slate-200">
-      <Link href="/">Go Back</Link>
-      <section className="flex justify-center items-center">
+      <nav className="bg-slate-200/90 absolute z-50 flex justify-start items-center gap-2 p-8 w-screen">
+        <Link
+          href="/"
+          className="cursor-pointer rounded-full w-12 h-12 hover:bg-slate-300 flex items-center justify-center"
+        >
+          <Image
+            src="/arrow_back_teal.svg"
+            width={32}
+            height={32}
+            alt="Go back icon"
+          />
+        </Link>
+        <Image
+          src="/MissDaniMo_Logo&Brand_Horizontal.png"
+          width={132}
+          height={50}
+          alt="Miss Dani Mo Logo"
+        />
+      </nav>
+      <section className="mt-32 flex justify-center items-center">
         <article className="max-w-lg w-full flex flex-col gap-4 p-4">
           <h1 className="text-3xl font-bold text-red-600">{project.title}</h1>
           <iframe
