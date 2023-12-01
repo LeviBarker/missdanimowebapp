@@ -80,8 +80,15 @@ export default async function Project({ params }: { params: { id: string } }) {
               <span className="text-teal-800 font-bold text-2xl">
                 Step {index + 1}
               </span>
-              <p>{step.text}</p>
-              <span>IMAGE URL: {step.illustration_url}</span>
+              <p className="pb-4">{step.text}</p>
+              {step.illustration_url && (
+                <Image
+                  width="100"
+                  height="100"
+                  alt="Step Illustration"
+                  src={step.illustration_url}
+                />
+              )}
             </div>
           ))}
         </article>

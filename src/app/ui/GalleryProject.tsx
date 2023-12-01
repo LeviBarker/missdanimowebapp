@@ -13,7 +13,7 @@ export default function GalleryProject({ project }: GalleryProjectProps) {
       style={{
         backgroundImage: "url(" + project.thumbnail_url + ")",
       }}
-      className="relative max-w-96 bg-center bg-cover w-full h-32 bg-slate-300 rounded-3xl p-4 overflow-hidden"
+      className="relative max-w-96 bg-center bg-cover w-full h-36 bg-slate-300 rounded-3xl p-4 overflow-hidden"
     >
       <Link
         href={`projects/${project.id}`}

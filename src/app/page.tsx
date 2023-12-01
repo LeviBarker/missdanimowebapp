@@ -24,7 +24,7 @@ export default async function Home() {
       <Navigation />
       <section className="mt-32 flex justify-center items-center">
         <section className=" max-w-5xl w-full">
-          <section className="max-w-5xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+          <section className="max-w-5xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {projects.map((project) => (
               <GalleryProject key={project.id} project={project} />
             ))}
