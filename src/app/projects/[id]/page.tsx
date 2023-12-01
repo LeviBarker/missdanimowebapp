@@ -7,6 +7,7 @@ import {
   doc,
   getFirestore,
 } from "firebase/firestore";
+import Link from "next/link";
 
 const firestore = getFirestore(app);
 
@@ -21,6 +22,7 @@ export default async function Project({ params }: { params: { id: string } }) {
 
   return (
     <Layout>
+      <Link href="/">Back to Home</Link>
       <h1>Detail {params.id}</h1>
       {JSON.stringify(project)}
     </Layout>
