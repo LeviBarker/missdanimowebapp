@@ -3,6 +3,7 @@ import { app } from "./firebase";
 import Navigation from "./ui/Navigation";
 import { Project } from "./models/project";
 import GalleryProject from "./ui/GalleryProject";
+import { Sidenav } from "./ui/Sidenav";
 
 const firestore = getFirestore(app);
 
@@ -20,7 +21,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="h-screen overflow-auto bg-slate-200">
+    <main className="h-screen overflow-auto bg-white">
       <Navigation />
       <section className="mt-32 flex justify-center items-center">
         <section className=" max-w-5xl w-full">

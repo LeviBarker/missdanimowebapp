@@ -24,8 +24,8 @@ export default async function Project({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
 
   return (
-    <main className="h-screen overflow-auto bg-slate-200">
-      <nav className="bg-slate-200/90 flex justify-start items-center gap-2 p-8 w-screen">
+    <main className="h-screen overflow-auto bg-white">
+      <nav className="flex justify-start items-center gap-2 p-8 w-screen">
         <Link
           href="/"
           className="cursor-pointer rounded-full w-12 h-12 hover:bg-slate-300 flex items-center justify-center"
